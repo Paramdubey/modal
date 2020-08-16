@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Card } from "@material-ui/core";
+import SimpleCard from "./SimpleCard";
+import "antd/dist/antd.css";
+import Data from "./data.json";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Member Activity</h1>
+
+      {Data.map((data, index) => {
+        return <SimpleCard userData={data} />;
+      })}
     </div>
   );
 }
